@@ -14,5 +14,11 @@ describe('Basket', function(){
     const actual = basket.items;
     assert.deepStrictEqual(actual, []);
   });
+  it('should be able to add items', function(){
+    basket.addItem(apple);
+    basket.addItem(orange);
+    const actual = basket.items;
+    assert.deepStrictEqual(actual, [apple, orange]);
+  });
 
 });
