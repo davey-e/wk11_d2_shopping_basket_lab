@@ -7,6 +7,7 @@ describe('Basket', function(){
   beforeEach(function(){
     apple = new Item('Apple',1, true);
     orange = new Item('Orange',1, false);
+    steak = new Item('Steak', 19, false);
     basket = new Basket();
   });
 
@@ -27,5 +28,12 @@ describe('Basket', function(){
     const actual = basket.items;
     assert.deepStrictEqual(actual, [apple]);
   });
+  it('should be able to calculate basket total', function(){
+    basket.addItem(apple);
+    basket.addItem(orange);
+    basket.addItem(steak);
+    const actual = basket.total();
+    assert.strictEqual(actual, 21);
+  })
 
 });
