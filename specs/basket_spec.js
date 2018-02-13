@@ -20,5 +20,12 @@ describe('Basket', function(){
     const actual = basket.items;
     assert.deepStrictEqual(actual, [apple, orange]);
   });
+  it('should be able to remove items', function(){
+    basket.addItem(apple);
+    basket.addItem(orange);
+    basket.removeItem(orange);
+    const actual = basket.items;
+    assert.deepStrictEqual(actual, [apple]);
+  });
 
 });
